@@ -29,3 +29,4 @@ Thumbs.db
 # Miscellaneous
 *.tgz
 *.log
+.vercel
