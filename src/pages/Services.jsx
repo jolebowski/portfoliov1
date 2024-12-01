@@ -16,32 +16,30 @@ function Services() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus('sending');
-  
-    const formData = new FormData(form.current);
-    const userName = formData.get('user_name');
-    const userEmail = formData.get('user_email');
-    const serviceType = formData.get('service');
-    const projectDetails = formData.get('project_details');
-  
+
+    const phoneNumber = e.target.user_phone.value;
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if (!phoneRegex.test(phoneNumber)) {
+      setStatus('error');
+      return;
+    }
+
     const templateParams = {
-      user_name: userName,
-      user_email: userEmail,
-      service: serviceType,
-      message: projectDetails,
+      user_name: e.target.user_name.value,
+      user_email: e.target.user_email.value,
+      user_phone: phoneNumber,
+      service: e.target.service.value,
+      project_details: e.target.project_details.value,
     };
-  
+
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_DEVIS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
-      .then(() => {
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
         setStatus('success');
         form.current.reset();
-        closeModal();
-  
-        setTimeout(() => {
-          setStatus('');
-        }, 3000);
-      })
-      .catch(() => {
+      }, (err) => {
+        console.log('FAILED...', err);
         setStatus('error');
       });
   };
@@ -158,6 +156,17 @@ function Services() {
             />
           </div>
           <div className="mb-4">
+            <label className="block text-gray-700">Votre numéro de téléphone</label>
+            <input 
+              type="tel" 
+              name="user_phone" 
+              className="border rounded w-full py-2 px-3" 
+              required 
+              pattern="[0-9]*"
+              maxLength="10"
+            />
+          </div>
+          <div className="mb-4">
             <label className="block text-gray-700">Type de service</label>
             <select 
               name="service" 
@@ -179,6 +188,8 @@ function Services() {
               required
             ></textarea>
           </div>
+          {status === 'error' && <p className="text-red-500 mt-4">Erreur lors de l'envoi du devis. Veuillez réessayer.</p>}
+          {status === 'success' && <p className="text-green-500 mt-4">Votre message a été envoyé avec succès !</p>}
           <div className="flex justify-between">
             <button 
               type="submit" 
@@ -195,8 +206,6 @@ function Services() {
             </button>
           </div>
         </form>
-        {status === 'success' && <p className="text-green-500 mt-4">Devis envoyé avec succès !</p>}
-        {status === 'error' && <p className="text-red-500 mt-4">Erreur lors de l'envoi du devis. Veuillez réessayer.</p>}
       </Modal>
       <FAQ />
     </div>
