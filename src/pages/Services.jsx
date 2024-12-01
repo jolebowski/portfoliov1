@@ -16,30 +16,34 @@ function Services() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    const phoneNumber = e.target.user_phone.value;
-    const phoneRegex = /^[0-9]{10}$/;
-
-    if (!phoneRegex.test(phoneNumber)) {
-      setStatus('error');
-      return;
-    }
-
+    setStatus('sending');
+  
+    const formData = new FormData(form.current);
+    const userName = formData.get('user_name');
+    const userEmail = formData.get('user_email');
+    const userPhone = formData.get('user_phone');
+    const serviceType = formData.get('service');
+    const projectDetails = formData.get('project_details');
+  
     const templateParams = {
-      user_name: e.target.user_name.value,
-      user_email: e.target.user_email.value,
-      user_phone: phoneNumber,
-      service: e.target.service.value,
-      project_details: e.target.project_details.value,
+      user_name: userName,
+      user_email: userEmail,
+      user_phone: userPhone,
+      service: serviceType,
+      message: projectDetails,
     };
-
+  
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_DEVIS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
+      .then(() => {
         setStatus('success');
         form.current.reset();
-      }, (err) => {
-        console.log('FAILED...', err);
+        closeModal();
+  
+        setTimeout(() => {
+          setStatus('');
+        }, 3000);
+      })
+      .catch(() => {
         setStatus('error');
       });
   };
@@ -161,7 +165,7 @@ function Services() {
               type="tel" 
               name="user_phone" 
               className="border rounded w-full py-2 px-3" 
-              required 
+              required
               pattern="[0-9]*"
               maxLength="10"
             />
