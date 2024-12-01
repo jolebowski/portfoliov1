@@ -1,34 +1,100 @@
-import React from 'react'
+import emailjs from 'emailjs-com';
+import React, { useRef, useState } from 'react';
+import Modal from 'react-modal';
+import FAQ from '../components/FAQ';
+import { EMAILJS_DEVIS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID } from '../config/config';
+
+Modal.setAppElement('#root');
 
 function Services() {
+  const form = useRef();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [status, setStatus] = useState('');
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setStatus('sending');
+  
+    const formData = new FormData(form.current);
+    const userName = formData.get('user_name');
+    const userEmail = formData.get('user_email');
+    const serviceType = formData.get('service');
+    const projectDetails = formData.get('project_details');
+  
+    const templateParams = {
+      user_name: userName,
+      user_email: userEmail,
+      service: serviceType,
+      message: projectDetails,
+    };
+  
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_DEVIS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+      .then(() => {
+        setStatus('success');
+        form.current.reset();
+        closeModal();
+  
+        setTimeout(() => {
+          setStatus('');
+        }, 3000);
+      })
+      .catch(() => {
+        setStatus('error');
+      });
+  };
+
   const services = [
     {
       title: 'Offre Starter',
       price: '500 €',
+      description: 'Idéal pour les petites entreprises souhaitant une présence en ligne.',
       features: [
         'Site vitrine de 3 pages',
         'Design personnalisé',
         'Livraison en 7 jours'
-      ]
+      ],
+      icon: '🌐',
+      popular: false,
     },
     {
       title: 'Offre Pro',
       price: '1000 €',
+      description: 'Pour les entreprises qui ont besoin d\'un site plus complet.',
       features: [
         'Site vitrine complet (jusqu\'à 6 pages)',
         'Optimisation SEO basique',
         'Formation de 2 heures'
-      ]
+      ],
+      icon: '💼',
+      popular: true,
     },
     {
       title: 'Abonnement',
       price: '50 €/mois',
+      description: 'Pour un suivi régulier et des mises à jour constantes.',
       features: [
         'Maintenance',
         'Mises à jour',
         '1h de modifications par mois'
-      ]
-    }
+      ],
+      icon: '🔧',
+      popular: false,
+    },
+    {
+      title: 'Développement Mobile',
+      price: '1500 €',
+      description: 'Créez une application mobile sur mesure pour votre entreprise.',
+      features: [
+        'Application mobile personnalisée',
+        'Compatible iOS et Android',
+        'Intégration d\'API et fonctionnalités avancées'
+      ],
+      icon: '📱',
+      popular: false,
+    },
   ]
 
   return (
@@ -40,8 +106,12 @@ function Services() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">{service.title}</h3>
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              {service.icon} {service.title}
+              {service.popular && <span className="text-red-500 ml-2">⭐ Populaire</span>}
+            </h3>
             <p className="text-3xl font-bold text-blue-500 mb-6">{service.price}</p>
+            <p className="text-gray-700 mb-6">{service.description}</p>
             <ul className="space-y-2">
               {service.features.map((feature, idx) => (
                 <li key={idx} className="flex items-center">
@@ -52,12 +122,83 @@ function Services() {
                 </li>
               ))}
             </ul>
-            <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">
+            <button 
+              onClick={openModal} 
+              className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+            >
               Demander un devis
             </button>
           </div>
         ))}
       </div>
+      <Modal 
+        isOpen={isModalOpen} 
+        onRequestClose={closeModal} 
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2 className="text-2xl font-bold mb-4">Demander un devis</h2>
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
+          <div className="mb-4">
+            <label className="block text-gray-700">Votre nom</label>
+            <input 
+              type="text" 
+              name="user_name" 
+              className="border rounded w-full py-2 px-3" 
+              required 
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Votre email</label>
+            <input 
+              type="email" 
+              name="user_email" 
+              className="border rounded w-full py-2 px-3" 
+              required 
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Type de service</label>
+            <select 
+              name="service" 
+              className="border rounded w-full py-2 px-3" 
+              required
+            >
+              <option value="">Sélectionnez un service</option>
+              <option value="web">Développement Web</option>
+              <option value="mobile">Développement Mobile</option>
+              <option value="maintenance">Maintenance</option>
+            </select>
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Détails de votre projet</label>
+            <textarea 
+              name="project_details" 
+              className="border rounded w-full py-2 px-3" 
+              rows="4" 
+              required
+            ></textarea>
+          </div>
+          <div className="flex justify-between">
+            <button 
+              type="submit" 
+              className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+            >
+              Envoyer
+            </button>
+            <button 
+              type="button" 
+              onClick={closeModal} 
+              className="ml-4 bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors duration-300"
+            >
+              Annuler
+            </button>
+          </div>
+        </form>
+        {status === 'success' && <p className="text-green-500 mt-4">Devis envoyé avec succès !</p>}
+        {status === 'error' && <p className="text-red-500 mt-4">Erreur lors de l'envoi du devis. Veuillez réessayer.</p>}
+      </Modal>
+      <FAQ />
     </div>
   )
 }

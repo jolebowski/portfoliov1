@@ -5,7 +5,7 @@ function About() {
     <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <img
-        src="/assets/images/Photo_MJ.jpg" // Utilisez le chemin relatif à partir de la racine du dossier public
+        src="/assets/images/Photo_MJ.jpg" 
         alt="Profile"
           className="w-44 h-44 rounded-full mx-auto border-4 border-blue-600 shadow-lg object-cover"
         />
@@ -19,6 +19,15 @@ function About() {
           <p className="text-lg leading-relaxed text-gray-700">
             <span className="font-semibold text-blue-600">Développeur web et mobile</span> basé au Mans, 
             je suis spécialisé en création de sites vitrines et d'applications mobiles modernes.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700">
+            J'ai plus de 5 ans d'expérience dans le développement de solutions numériques, ayant travaillé sur divers projets pour des clients de différents secteurs.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700">
+            Mes projets incluent des applications de gestion, des sites e-commerce et des plateformes de réservation.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700">
+            Je suis passionné par l'apprentissage continu et je m'efforce de rester à jour avec les dernières technologies et tendances du secteur.
           </p>
           
           <div className="flex items-start space-x-3">
@@ -61,7 +70,7 @@ function About() {
               <h4 className="text-xl font-bold text-gray-800">Frontend</h4>
             </div>
             <ul className="space-y-3">
-              {['HTML5 & CSS3', 'JavaScript (ES6+)', 'React.js', 'Vue.js'].map((skill) => (
+              {['HTML5 & CSS3', 'JavaScript (ES6+)', 'React.js', 'Vue.js', 'React Native', 'Next.js', 'TypeScript'].map((skill) => (
                 <li key={skill} className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
                   <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />

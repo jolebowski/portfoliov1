@@ -7,10 +7,10 @@ function Home() {
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative">
           <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
-            Bonjour,
+            Bienvenue sur mon portfolio,
           </span>
           <span className="block mt-2">
-            je suis <span className="text-blue-600">Jordan</span>
+            Je suis <span className="text-blue-600">Jordan</span>, développeur passionné.
           </span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 mb-8 px-4">

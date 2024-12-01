@@ -1,7 +1,5 @@
-import React, { lazy, Suspense } from 'react'
-import ImageLoader from '../components/ImageLoader'
-
-const ProjectCard = lazy(() => import('../components/ProjectCard'))
+import React, { Suspense } from 'react'
+import { Link } from 'react-router-dom'
 
 function Projects() {
   const projects = [
@@ -11,6 +9,7 @@ function Projects() {
       image: "https://via.placeholder.com/300",
       technologies: ["React", "Node.js", "MongoDB"],
       demoUrl: "#",
+      details: "Développé en 3 mois, j'ai géré l'intégralité du projet, de la conception à la mise en ligne.",
      // githubUrl: "https://github.com/username/ecommerce"
     },
     {
@@ -19,6 +18,7 @@ function Projects() {
       image: "https://via.placeholder.com/300",
       technologies: ["Vue.js", "Express", "API REST"],
       demoUrl: "#",
+      details: "Cette application utilise des API tierces pour fournir des données en temps réel.",
       //githubUrl: "https://github.com/username/meteo-app"
     },
     {
@@ -26,14 +26,16 @@ function Projects() {
       description: "Description courte du projet 3",
       image: "https://via.placeholder.com/300",
       technologies: ["React Native", "Firebase"],
-      //demoLink: "#"
+      demoUrl: "#",
+      details: "Application mobile développée pour Android et iOS.",
     },
     {
-      title: "Projet 3",
-      description: "Description courte du projet 3",
+      title: "Projet 4",
+      description: "Description courte du projet 4",
       image: "https://via.placeholder.com/300",
       technologies: ["React Native", "Firebase"],
-      //demoLink: "#"
+      demoUrl: "#",
+      details: "Application mobile développée pour Android et iOS.",
     },
   ]
 
@@ -71,6 +73,7 @@ function Projects() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-sm mb-3">{project.description}</p>
+                  <p className="text-xs mb-3 italic">{project.details}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, idx) => (
                       <span key={idx} className="text-xs px-2 py-1 bg-white/20 rounded-full">
@@ -108,6 +111,13 @@ function Projects() {
             </div>
           ))}
         </Suspense>
+      </div>
+
+      <div className="mt-8 text-center">
+        <h2 className="text-2xl font-bold text-gray-800">Prêt à discuter de votre projet ?</h2>
+        <Link to="/contact" className="mt-4 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+          Contactez-moi
+        </Link>
       </div>
     </div>
   )

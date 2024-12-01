@@ -1,23 +1,23 @@
 import React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
   const socialLinks = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/votre-username',
-      icon: FaGithub
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/in/votre-profil',
-      icon: FaLinkedin
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/votre-compte',
-      icon: FaTwitter
-    }
+    // {
+    //   name: 'GitHub',
+    //   url: 'https://github.com/votre-username',
+    //   icon: FaGithub
+    // },
+    // {
+    //   name: 'LinkedIn',
+    //   url: 'https://www.linkedin.com/in/iamjomoreira/',
+    //   icon: FaLinkedin
+    // },
+    // {
+    //   name: 'Twitter',
+    //   url: 'https://x.com/iamjomoreira',
+    //   icon: FaTwitter
+    // }
   ]
 
   return (
@@ -31,7 +31,7 @@ function Footer() {
             </p>
           </div>
           
-          <div className="flex space-x-6">
+          {/* <div className="flex space-x-6">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
@@ -44,7 +44,7 @@ function Footer() {
                 <social.icon className="h-6 w-6" />
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
