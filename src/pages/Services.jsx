@@ -11,8 +11,14 @@ function Services() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [status, setStatus] = useState('');
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+    document.body.classList.add('no-scroll'); 
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.classList.remove('no-scroll'); 
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();

@@ -23,8 +23,8 @@ function Footer() {
   return (
     <footer className="bg-gray-800 text-white shadow-lg mt-auto">
       <div className="max-w-6xl mx-auto px-4 py-6">
-        <div className="flex flex-col sm:flex-row justify-between items-center">
-          <div className="mb-4 sm:mb-0">
+        <div className="flex flex-col sm:flex-row justify-center items-center">
+          <div className="mb-4 sm:mb-0 text-center">
             <p className="text-gray-300">
               <span className="font-semibold text-lg">Jordan Moreira</span>
               <span className="text-sm ml-2">© {new Date().getFullYear()}</span>
