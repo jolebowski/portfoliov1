@@ -6,10 +6,10 @@ function Projects() {
     {
       title: "Site E-commerce",
       description: "Une plateforme de vente en ligne complète avec panier et paiement",
-      image: "https://via.placeholder.com/300",
-      technologies: ["React", "Node.js", "MongoDB"],
-      demoUrl: "#",
-      details: "Développé en 3 mois, j'ai géré l'intégralité du projet, de la conception à la mise en ligne.",
+      image: "/assets/images/escooter.png",
+      technologies: ["React"],
+      demoUrl: "https://e-scooter-8m51-rgnwz2cer-jordan-moreiras-projects.vercel.app/",
+      details: "Développé en 1 semaine, j'ai géré l'intégralité du projet, de la conception à la mise en ligne.",
      // githubUrl: "https://github.com/username/ecommerce"
     },
     {
@@ -70,7 +70,7 @@ function Projects() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black bg-opacity-70">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-sm mb-3">{project.description}</p>
                   <p className="text-xs mb-3 italic">{project.details}</p>
