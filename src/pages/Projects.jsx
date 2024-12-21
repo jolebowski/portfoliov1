@@ -4,38 +4,40 @@ import { Link } from 'react-router-dom'
 function Projects() {
   const projects = [
     {
-      title: "Site E-commerce",
+      title: "Escooter",
       description: "Une plateforme de vente en ligne complète avec panier et paiement",
       image: "/assets/images/escooter.png",
       technologies: ["React"],
-      demoUrl: "https://e-scooter-8m51-rgnwz2cer-jordan-moreiras-projects.vercel.app/",
+      demoUrl: "https://e-scooter-psi.vercel.app/",
       details: "Développé en 1 semaine, j'ai géré l'intégralité du projet, de la conception à la mise en ligne.",
      // githubUrl: "https://github.com/username/ecommerce"
     },
     {
-      title: "Application Météo",
-      description: "Application météo en temps réel avec géolocalisation",
-      image: "https://via.placeholder.com/300",
-      technologies: ["Vue.js", "Express", "API REST"],
+      title: "Quit Betting",
+      description: "Application pour arrêter de parier",
+      image: "/assets/images/addiction_consequences_3.png",
+      technologies: ["React Native"],
       demoUrl: "#",
-      details: "Cette application utilise des API tierces pour fournir des données en temps réel.",
+      details: "Cette application est actuellement en développement pour aider les utilisateurs à surmonter leurs habitudes de pari.",
       //githubUrl: "https://github.com/username/meteo-app"
     },
     {
-      title: "Projet 3",
-      description: "Description courte du projet 3",
-      image: "https://via.placeholder.com/300",
-      technologies: ["React Native", "Firebase"],
-      demoUrl: "#",
-      details: "Application mobile développée pour Android et iOS.",
+      title: "Maison Coiffure",
+      description: "Application pour la gestion d'un salon de coiffure, permettant aux clients de réserver des rendez-vous en ligne.",
+      image: "/assets/images/maisoncoiffure.png",
+      technologies: ["React"],
+      demoUrl: "https://maison-coiffure.vercel.app/",
+      details: "Application développée avec React",
+      //githubUrl: "https://github.com/username/meteo-app"
     },
     {
-      title: "Projet 4",
-      description: "Description courte du projet 4",
-      image: "https://via.placeholder.com/300",
-      technologies: ["React Native", "Firebase"],
-      demoUrl: "#",
-      details: "Application mobile développée pour Android et iOS.",
+      title: "Studio Photo",
+      description: "Portfolio d'un studio photo professionnel, mettant en avant des réalisations variées.",
+      image: "/assets/images/studiophoto.png",
+      technologies: ["React"],
+      demoUrl: "https://studio-photo-snowy.vercel.app/",
+      details: "Ce portfolio présente les travaux du studio, incluant des séances photo, des événements et des projets créatifs.",
+      //githubUrl: "https://github.com/username/meteo-app"
     },
   ]
 
@@ -69,8 +71,8 @@ function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black bg-opacity-70">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 flex flex-col justify-end p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-black bg-opacity-90">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-sm mb-3">{project.description}</p>
                   <p className="text-xs mb-3 italic">{project.details}</p>
@@ -82,18 +84,20 @@ function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors"
-                    >
-                      <span>Démo</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                    </a>
+                    {project.demoUrl && project.demoUrl !== "#" && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors"
+                      >
+                        <span>Démo</span>
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      </a>
+                    )}
                     {/* <a
                       href={project.githubUrl}
                       target="_blank"
