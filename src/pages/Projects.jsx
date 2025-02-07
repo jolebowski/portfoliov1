@@ -39,6 +39,24 @@ function Projects() {
       details: "Ce portfolio présente les travaux du studio, incluant des séances photo, des événements et des projets créatifs.",
       //githubUrl: "https://github.com/username/meteo-app"
     },
+    {
+      title: "Simulateur de Devis",
+      description: "Un simulateur interactif pour générer des devis personnalisés.",
+      image: "/assets/images/simulator_devis.png",
+      technologies: ["React"],
+      demoUrl: "https://simulatordevis.vercel.app/",
+      details: "Ce simulateur permet aux utilisateurs de créer des devis en fonction de leurs besoins spécifiques.",
+      //githubUrl: "https://github.com/username/meteo-app"
+    },
+    {
+      title: "Inventaire des Chaussures",
+      description: "Une application pour gérer l'inventaire des chaussures avec des fonctionnalités avancées.",
+      image: "/assets/images/inventory_shoes.png",
+      technologies: ["React"],
+      demoUrl: "https://inventoryshoes.vercel.app/",
+      details: "Veuillez voir la démo sur un écran grand pour une meilleure expérience.",
+      //githubUrl: "https://github.com/username/meteo-app"
+    },
   ]
 
   return (
