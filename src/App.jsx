@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import ContactBanner from './components/ContactBanner'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import { initGA, logPageView } from './config/analytics'
@@ -33,6 +34,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
+      <ContactBanner />
     </div>
   )
 }

@@ -4,7 +4,6 @@ import { FaClock, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import FormField from '../components/FormField';
 import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from '../config/config';
 
-
 function Contact() {
   const form = useRef()
   const [status, setStatus] = useState('')
