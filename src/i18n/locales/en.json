@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "Welcome to my portfolio",
+    "name": "I'm Jordan",
+    "title": "Web & Mobile Developer",
+    "description": "Freelance web developer specialized in creating professional websites and React Native mobile applications",
+    "cta": {
+      "quote": "Get a free quote",
+      "projects": "View my projects"
+    },
+    "services": {
+      "title": "What I can do for you",
+      "subtitle": "From showcase websites to complex mobile applications, I transform your ideas into digital reality"
+    },
+    "features": {
+      "clean": {
+        "title": "Clean Code",
+        "desc": "Maintainable and scalable"
+      },
+      "responsive": {
+        "title": "Responsive",
+        "desc": "Adapted to all screens"
+      },
+      "performance": {
+        "title": "Performance",
+        "desc": "Optimized for speed"
+      }
+    }
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Passionate web and mobile developer",
+    "description": "based in Le Mans, I transform your ideas into innovative and high-performance digital solutions.",
+    "experience": "With over 5 years of experience, I master the latest technologies to create web and mobile applications that make a difference.",
+    "cta": {
+      "work": "Let's work together",
+      "skills": "View my skills"
+    },
+    "skills": {
+      "title": "Skills & Expertise",
+      "subtitle": "Modern technologies and best practices for high-performance projects"
+    },
+    "timeline": {
+      "title": "My Journey",
+      "subtitle": "A constant evolution towards technical excellence"
+    }
+  },
+  "services": {
+    "title": "My Services",
+    "subtitle": "Custom digital solutions to propel your business to success",
+    "cta": {
+      "discover": "Discover our offers",
+      "quote": "Request a quote"
+    },
+    "modal": {
+      "title": "Request a quote",
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "service": "Type of service",
+      "details": "Project details",
+      "send": "Send",
+      "sending": "Sending...",
+      "cancel": "Cancel",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "Let's transform your ideas into concrete projects. I'm here to discuss your needs.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send message",
+      "sending": "Sending..."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

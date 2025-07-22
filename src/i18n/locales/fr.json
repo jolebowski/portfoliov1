@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "Bienvenue sur mon portfolio",
+    "name": "Je suis Jordan",
+    "title": "Développeur Web & Mobile",
+    "description": "Développeur web freelance spécialisé dans la création de sites web professionnels et d'applications mobiles React Native",
+    "cta": {
+      "quote": "Obtenir un devis gratuit",
+      "projects": "Voir mes projets"
+    },
+    "services": {
+      "title": "Ce que je peux faire pour vous",
+      "subtitle": "Du site vitrine à l'application mobile complexe, je transforme vos idées en réalité digitale"
+    },
+    "features": {
+      "clean": {
+        "title": "Code Propre",
+        "desc": "Maintenable et évolutif"
+      },
+      "responsive": {
+        "title": "Responsive",
+        "desc": "Adapté à tous les écrans"
+      },
+      "performance": {
+        "title": "Performance",
+        "desc": "Optimisé pour la vitesse"
+      }
+    }
+  },
+  "about": {
+    "title": "À propos de moi",
+    "subtitle": "Développeur web et mobile passionné",
+    "description": "basé au Mans, je transforme vos idées en solutions digitales innovantes et performantes.",
+    "experience": "Fort de plus de 5 ans d'expérience, je maîtrise les dernières technologies pour créer des applications web et mobiles qui font la différence.",
+    "cta": {
+      "work": "Travaillons ensemble",
+      "skills": "Voir mes compétences"
+    },
+    "skills": {
+      "title": "Compétences & Expertise",
+      "subtitle": "Technologies modernes et best practices pour des projets performants"
+    },
+    "timeline": {
+      "title": "Mon Parcours",
+      "subtitle": "Une évolution constante vers l'excellence technique"
+    }
+  },
+  "services": {
+    "title": "Mes Services",
+    "subtitle": "Des solutions digitales sur mesure pour propulser votre entreprise vers le succès",
+    "cta": {
+      "discover": "Découvrir nos offres",
+      "quote": "Demander un devis"
+    },
+    "modal": {
+      "title": "Demander un devis",
+      "name": "Votre nom",
+      "email": "Votre email",
+      "phone": "Votre numéro de téléphone",
+      "service": "Type de service",
+      "details": "Détails de votre projet",
+      "send": "Envoyer",
+      "sending": "Envoi...",
+      "cancel": "Annuler",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi. Veuillez réessayer."
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Transformons vos idées en projets concrets. Je suis à votre écoute pour discuter de vos besoins.",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours..."
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  }
+}

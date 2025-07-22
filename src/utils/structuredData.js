@@ -108,3 +108,50 @@ export const serviceSchema = {
     ]
   }
 }
+
+export const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quels types de services proposez-vous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Je propose des services de développement web, de développement mobile, ainsi que des solutions de maintenance et de mise à jour. Chaque service est personnalisé selon vos besoins spécifiques."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps faut-il pour réaliser un projet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le délai dépend de la complexité du projet. En général, un site vitrine peut être livré en 7 jours, tandis qu'une application mobile peut prendre plusieurs semaines. Je fournis toujours un calendrier détaillé avant de commencer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proposez-vous des services de maintenance ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, j'offre des services de maintenance mensuels pour assurer le bon fonctionnement de votre site ou application. Cela inclut les mises à jour de sécurité, les sauvegardes régulières et le support technique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment puis-je vous contacter pour discuter de mon projet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous pouvez me contacter via le formulaire de contact sur mon site, directement par email, ou utiliser le bouton \"Demander un devis\" pour démarrer une conversation sur votre projet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelles technologies utilisez-vous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "J'utilise les dernières technologies web modernes incluant React, Next.js, Node.js, et diverses autres technologies selon les besoins du projet. Je m'assure toujours d'utiliser les outils les plus adaptés."
+      }
+    }
+  ]
+}

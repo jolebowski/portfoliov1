@@ -5,9 +5,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
 
 # Sitemap location
 Sitemap: https://www.jordanmoreira.fr/sitemap.xml
