@@ -1,12 +1,15 @@
 // Web Vitals monitoring for Core Web Vitals optimization
 export const reportWebVitals = (onPerfEntry) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
+    // Dynamically import web-vitals only if available
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry)
       getFID(onPerfEntry)
       getFCP(onPerfEntry)
       getLCP(onPerfEntry)
       getTTFB(onPerfEntry)
+    }).catch(() => {
+      console.log('Web vitals not available')
     })
   }
 }
