@@ -57,6 +57,24 @@ function Projects() {
       details: "Veuillez voir la démo sur un écran grand pour une meilleure expérience.",
       //githubUrl: "https://github.com/username/meteo-app"
     },
+    {
+      title: "Neyda",
+      description: "Application pour découvrir restaurants et lieux tendances à Amsterdam",
+      image: "/assets/images/neyda.png",
+      technologies: ["React Native", "Expo", "Supabase"],
+      demoUrl: "#",
+      details: "Application mobile en développement pour trouver des restaurants, des lieux de divertissement et des endroits à la mode à Amsterdam.",
+      //githubUrl: "https://github.com/username/neyda"
+    },
+    {
+      title: "ScrollBlocker",
+      description: "Extension Chrome pour gérer votre temps en ligne et encourager des pauses régulières",
+      image: "/assets/images/scrollblocker.png",
+      technologies: ["Chrome Extension", "JavaScript"],
+      demoUrl: "https://chromewebstore.google.com/detail/kpngiihklmgpmhmjcmmajbgmhkmebdbe?utm_source=item-share-cb",
+      details: "ScrollBlocker surveille intelligemment votre temps de navigation sur les sites que vous spécifiez et vous aide à reprendre le contrôle de votre temps en ligne.",
+      //githubUrl: "https://github.com/username/scrollblocker"
+    },
   ]
 
   return (
