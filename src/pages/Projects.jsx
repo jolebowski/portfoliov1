@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 function Projects() {
   const projects = [
@@ -78,7 +79,14 @@ function Projects() {
   ]
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
+    <>
+      <SEO 
+        title="Projets"
+        description="Découvrez mes réalisations : sites e-commerce, applications mobiles, sites vitrines et solutions sur mesure pour différents secteurs."
+        keywords="portfolio projets, sites web, applications mobiles, e-commerce, React, React Native"
+        url="/projects"
+      />
+      <div className="max-w-6xl mx-auto px-4 py-16">
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           Mes Projets
@@ -104,7 +112,7 @@ function Projects() {
               <div className="relative h-64">
                 <img 
                   src={project.image} 
-                  alt={project.title}
+                  alt={`${project.title} - ${project.description}`}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -160,6 +168,7 @@ function Projects() {
         </Link>
       </div>
     </div>
+    </>
   )
 }
 

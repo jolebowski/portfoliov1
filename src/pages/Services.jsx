@@ -2,7 +2,9 @@ import emailjs from 'emailjs-com';
 import React, { useRef, useState } from 'react';
 import Modal from 'react-modal';
 import FAQ from '../components/FAQ';
+import SEO from '../components/SEO';
 import { EMAILJS_DEVIS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID } from '../config/config';
+import { serviceSchema } from '../utils/structuredData';
 
 Modal.setAppElement('#root');
 
@@ -106,7 +108,15 @@ function Services() {
   ]
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
+    <>
+      <SEO 
+        title="Services"
+        description="Services de développement web et mobile : sites vitrines, applications mobiles, e-commerce, refonte de sites et solutions sur mesure."
+        keywords="services développement web, création site internet, application mobile, e-commerce, refonte site web"
+        url="/services"
+        structuredData={serviceSchema}
+      />
+      <div className="max-w-6xl mx-auto px-4 py-16">
       <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
         Mes Services
       </h2>
@@ -219,6 +229,7 @@ function Services() {
       </Modal>
       <FAQ />
     </div>
+    </>
   )
 }
 

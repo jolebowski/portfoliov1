@@ -1,12 +1,20 @@
 import React from 'react'
+import SEO from '../components/SEO'
 
 function About() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <>
+      <SEO 
+        title="À propos"
+        description="Développeur web et mobile avec plus de 5 ans d'expérience. Spécialisé en React, Node.js et développement d'applications mobiles."
+        keywords="développeur web Le Mans, développeur mobile, React, Node.js, expérience développement"
+        url="/about"
+      />
+      <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <img
         src="/assets/images/Photo_MJ.jpg" 
-        alt="Profile"
+        alt="Jordan Moreira - Développeur Web et Mobile Freelance au Mans"
           className="w-44 h-44 rounded-full mx-auto border-4 border-blue-600 shadow-lg object-cover"
         />
         <h2 className="text-4xl font-bold mb-4 text-gray-800">
@@ -102,6 +110,7 @@ function About() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

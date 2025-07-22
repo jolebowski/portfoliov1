@@ -1,9 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 function Home() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-20">
+    <>
+      <SEO 
+        title="Accueil - Développeur Web Freelance"
+        description="Développeur web freelance au Mans. Création de sites web professionnels, applications mobiles React Native, sites e-commerce. Devis gratuit et accompagnement personnalisé."
+        keywords="développeur web freelance Le Mans, création site web professionnel, développeur React freelance, développement application mobile, création site vitrine, développeur fullstack France"
+      />
+      <div className="max-w-6xl mx-auto px-4 py-20">
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 relative">
           <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
@@ -14,7 +21,7 @@ function Home() {
           </span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 mb-8 px-4">
-          Développeur spécialisé dans la création de sites web et d'applications mobiles.
+          <strong>Développeur web freelance</strong> spécialisé dans la création de <strong>sites web professionnels</strong> et d'<strong>applications mobiles React Native</strong>.
         </p>
         
         <div className="space-y-4 text-lg md:text-xl text-gray-600 mb-8 px-4">
@@ -23,9 +30,9 @@ function Home() {
           </p>
           
           <p>
-            Que vous souhaitiez un site vitrine élégant, une application mobile performante, 
-            ou un service sur mesure, je vous accompagne à chaque étape pour transformer 
-            vos idées en projets concrets.
+            Que vous souhaitiez un <strong>site vitrine élégant</strong>, une <strong>application mobile performante</strong>, 
+            un <strong>site e-commerce</strong> ou un <strong>service de développement sur mesure</strong>, je vous accompagne à chaque étape pour transformer 
+            vos idées en projets concrets. <strong>Devis gratuit</strong> et personnalisé pour votre projet web.
           </p>
           
           <p>
@@ -60,6 +67,7 @@ function Home() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
 import { FaClock, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import FormField from '../components/FormField';
+import SEO from '../components/SEO';
 import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from '../config/config';
 
 function Contact() {
@@ -32,7 +33,14 @@ function Contact() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-16">
+    <>
+      <SEO 
+        title="Contact"
+        description="Contactez-moi pour discuter de votre projet web ou mobile. Basé au Mans, disponible pour des projets partout en France."
+        keywords="contact développeur web, contact développeur mobile, devis site web, Le Mans"
+        url="/contact"
+      />
+      <div className="max-w-2xl mx-auto px-4 py-16">
       <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
         Contactez-moi
       </h2>
@@ -103,6 +111,7 @@ function Contact() {
         )}
       </form>
     </div>
+    </>
   )
 }
 
