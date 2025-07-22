@@ -51,7 +51,11 @@ function LazyImage({ src, alt, className, ...props }) {
         />
       )}
       {!isLoaded && (
-        <div className={`absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse rounded ${className}`} />
+        <div 
+          className={`absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse rounded ${className}`}
+          role="img"
+          aria-label="Chargement de l'image en cours"
+        />
       )}
     </div>
   );

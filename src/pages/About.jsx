@@ -5,6 +5,7 @@ import AnimatedSection from '../components/AnimatedSection'
 import MagneticButton from '../components/MagneticButton'
 import { Link } from 'react-router-dom'
 import LazyImage from '../components/LazyImage'
+import { breadcrumbSchema } from '../utils/structuredData'
 
 function About() {
   const skills = {
@@ -31,10 +32,14 @@ function About() {
   return (
     <>
       <SEO 
-        title="À propos"
-        description="Développeur web et mobile avec plus de 5 ans d'expérience. Spécialisé en React, Node.js et développement d'applications mobiles."
-        keywords="développeur web Le Mans, développeur mobile, React, Node.js, expérience développement"
+        title="À propos - Développeur Full Stack"
+        description="Développeur web et mobile avec plus de 5 ans d'expérience au Mans. Spécialisé en React, React Native, Node.js et développement d'applications mobiles performantes."
+        keywords="développeur web Le Mans, développeur mobile expérimenté, React developer, Node.js expert, expérience développement, freelance fullstack"
         url="/about"
+        structuredData={breadcrumbSchema([
+          { name: 'Accueil', url: '/' },
+          { name: 'À propos', url: '/about' }
+        ])}
       />
       
       {/* Hero Section */}

@@ -202,6 +202,24 @@ function Services() {
       {/* Services Grid with 3D Cards */}
       <AnimatedSection>
         <div id="services-grid" className="max-w-7xl mx-auto px-4 py-20">
+          <motion.h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-dark-900 dark:text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Nos Formules
+          </motion.h2>
+          <motion.p 
+            className="text-center text-lg md:text-xl text-dark-600 dark:text-dark-300 mb-12 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Choisissez la formule adaptée à vos besoins et votre budget
+          </motion.p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <motion.div

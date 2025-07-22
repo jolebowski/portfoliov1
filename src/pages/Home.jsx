@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import SEO from '../components/SEO'
 import AnimatedSection from '../components/AnimatedSection'
 import MagneticButton from '../components/MagneticButton'
+import { breadcrumbSchema } from '../utils/structuredData'
 
 function Home() {
   const { t } = useTranslation()
@@ -12,9 +13,10 @@ function Home() {
   return (
     <>
       <SEO 
-        title="Accueil - Développeur Web Freelance"
+        title="Accueil - Développeur Web Freelance au Mans"
         description="Développeur web freelance au Mans. Création de sites web professionnels, applications mobiles React Native, sites e-commerce. Devis gratuit et accompagnement personnalisé."
         keywords="développeur web freelance Le Mans, création site web professionnel, développeur React freelance, développement application mobile, création site vitrine, développeur fullstack France"
+        structuredData={breadcrumbSchema([{ name: 'Accueil', url: '/' }])}
       />
       
       {/* Hero Section with animated gradient background */}

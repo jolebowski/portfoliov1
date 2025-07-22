@@ -130,9 +130,9 @@ function LeadMagnet() {
                   >
                     <span className="text-3xl">📊</span>
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-2">
+                  <div className="text-2xl font-bold text-dark-900 dark:text-white mb-2" role="heading" aria-level="3">
                     {texts.title}
-                  </h3>
+                  </div>
                   <p className="text-dark-600 dark:text-dark-300">
                     {texts.subtitle}
                   </p>

@@ -5,15 +5,24 @@ export const personSchema = {
   "jobTitle": "Développeur Web & Mobile Freelance",
   "url": "https://www.jordanmoreira.fr",
   "image": "https://www.jordanmoreira.fr/assets/images/Photo_MJ.jpg",
+  "email": "contact@jordanmoreira.fr",
+  "telephone": "+33-6-XX-XX-XX-XX",
   "sameAs": [
     "https://www.linkedin.com/in/jordanmoreira",
-    "https://github.com/jordanmoreira"
+    "https://github.com/jordanmoreira",
+    "https://twitter.com/jordanmoreira"
   ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Le Mans",
     "addressRegion": "Pays de la Loire",
-    "addressCountry": "FR"
+    "addressCountry": "FR",
+    "postalCode": "72000"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Jordan Moreira Freelance",
+    "url": "https://www.jordanmoreira.fr"
   },
   "knowsAbout": [
     "React",
@@ -46,15 +55,25 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Portfolio de Jordan Moreira",
+  "alternateName": "Jordan Moreira - Développeur Web & Mobile",
   "url": "https://www.jordanmoreira.fr",
-  "description": "Développeur web freelance spécialisé en React, React Native et création de sites web modernes.",
+  "description": "Développeur web freelance au Mans spécialisé en React, React Native et création de sites web modernes. Services de développement web, applications mobiles et solutions sur mesure.",
   "publisher": {
+    "@type": "Person",
+    "name": "Jordan Moreira"
+  },
+  "inLanguage": ["fr-FR", "en-US"],
+  "copyrightYear": 2024,
+  "copyrightHolder": {
     "@type": "Person",
     "name": "Jordan Moreira"
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://www.jordanmoreira.fr/projects?search={search_term_string}",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.jordanmoreira.fr/projects?search={search_term_string}"
+    },
     "query-input": "required name=search_term_string"
   }
 }
@@ -153,5 +172,74 @@ export const faqSchema = {
         "text": "J'utilise les dernières technologies web modernes incluant React, Next.js, Node.js, et diverses autres technologies selon les besoins du projet. Je m'assure toujours d'utiliser les outils les plus adaptés."
       }
     }
+  ]
+}
+
+export const breadcrumbSchema = (items) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": `https://www.jordanmoreira.fr${item.url}`
+  }))
+})
+
+export const projectSchema = (project) => ({
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": project.title,
+  "description": project.description,
+  "url": project.link,
+  "image": project.image,
+  "creator": {
+    "@type": "Person",
+    "name": "Jordan Moreira"
+  },
+  "dateCreated": project.date,
+  "keywords": project.technologies.join(", "),
+  "inLanguage": "fr-FR"
+})
+
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Jordan Moreira - Développeur Web Freelance",
+  "image": "https://www.jordanmoreira.fr/assets/images/Photo_MJ.jpg",
+  "@id": "https://www.jordanmoreira.fr",
+  "url": "https://www.jordanmoreira.fr",
+  "telephone": "+33-6-XX-XX-XX-XX",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "",
+    "addressLocality": "Le Mans",
+    "addressRegion": "Pays de la Loire",
+    "postalCode": "72000",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.00611,
+    "longitude": 0.19956
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/jordanmoreira",
+    "https://github.com/jordanmoreira"
   ]
 }

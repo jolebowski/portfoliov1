@@ -1,0 +1,27 @@
+{
+  "name": "Jordan Moreira - Développeur Web & Mobile Freelance",
+  "short_name": "JM Portfolio",
+  "description": "Développeur web freelance au Mans spécialisé en React, React Native et création de sites web modernes",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/apple-touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/Photo_MJ.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "developer", "portfolio"],
+  "lang": "fr-FR",
+  "dir": "ltr"
+}
