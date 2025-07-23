@@ -12,16 +12,16 @@ function Contact() {
     {
       icon: FaPhone,
       title: 'Téléphone',
-      value: '+33 6 95 46 17 27',
-      link: 'tel:+33695461727',
+      value: '+33 6 46 70 07 15',
+      link: 'tel:+33646700715',
       color: 'from-primary-400 to-primary-600',
       delay: 0.1
     },
     {
       icon: FaEnvelope,
       title: 'Email',
-      value: 'jordanmreira@gmail.com',
-      link: 'mailto:jordanmreira@gmail.com',
+      value: 'jordan.moreira@epitech.eu',
+      link: 'mailto:jordan.moreira@epitech.eu',
       color: 'from-accent-mint to-accent-mint/80',
       delay: 0.2
     },
