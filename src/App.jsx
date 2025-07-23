@@ -4,7 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import ContactBanner from './components/ContactBanner'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import LeadMagnet from './components/LeadMagnet'
+// import LeadMagnet from './components/LeadMagnet' // Commented out - not working
 import { initGA, logPageView } from './config/analytics'
 import { personSchema, websiteSchema } from './utils/structuredData'
 
@@ -57,7 +57,7 @@ function App() {
       </div>
       <Footer />
       <ContactBanner />
-      <LeadMagnet />
+      {/* <LeadMagnet /> */} {/* Commented out - audit feature not working */}
     </div>
   )
 }

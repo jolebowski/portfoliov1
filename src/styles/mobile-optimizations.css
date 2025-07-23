@@ -1,0 +1,99 @@
+/* Mobile Performance Optimizations */
+
+/* Disable heavy shadows on mobile */
+@media (max-width: 768px) {
+  /* Reduce blur effects */
+  .blur-3xl {
+    filter: blur(24px);
+  }
+  
+  .blur-2xl {
+    filter: blur(16px);
+  }
+  
+  .blur-xl {
+    filter: blur(8px);
+  }
+  
+  /* Disable backdrop filters on mobile for performance */
+  .backdrop-blur-sm,
+  .backdrop-blur,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Simplify gradients */
+  .gradient-mesh-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    animation: none !important;
+  }
+  
+  /* Disable complex animations */
+  .animate-pulse {
+    animation: none;
+  }
+  
+  /* Reduce shadow complexity */
+  .shadow-2xl {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-xl {
+    box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optimize transforms */
+  .transform {
+    will-change: auto;
+  }
+  
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    .hover\:scale-105:hover,
+    .hover\:scale-110:hover {
+      transform: none;
+    }
+    
+    .hover\:shadow-lg:hover,
+    .hover\:shadow-xl:hover,
+    .hover\:shadow-2xl:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+/* Performance hints for mobile */
+@media (max-width: 768px) {
+  /* Use GPU acceleration wisely */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Optimize text rendering */
+  body {
+    text-rendering: optimizeSpeed;
+  }
+  
+  /* Reduce animation duration */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

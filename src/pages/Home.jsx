@@ -6,9 +6,12 @@ import SEO from '../components/SEO'
 import AnimatedSection from '../components/AnimatedSection'
 import MagneticButton from '../components/MagneticButton'
 import { breadcrumbSchema } from '../utils/structuredData'
+import { isMobile, shouldDisableEffects } from '../utils/mobileOptimizations'
 
 function Home() {
   const { t } = useTranslation()
+  const disableHeavyEffects = shouldDisableEffects()
+  const mobile = isMobile()
   
   return (
     <>
@@ -27,31 +30,35 @@ function Home() {
         {/* Noise texture overlay */}
         <div className="absolute inset-0 noise-bg" />
         
-        {/* Floating elements */}
-        <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-primary-400/30 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-accent-mint/30 rounded-full blur-3xl"
-          animate={{
-            x: [0, -30, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+        {/* Floating elements - disabled on mobile for performance */}
+        {!mobile && (
+          <>
+            <motion.div
+              className="absolute top-20 left-10 w-72 h-72 bg-primary-400/30 rounded-full blur-3xl"
+              animate={disableHeavyEffects ? {} : {
+                x: [0, 50, 0],
+                y: [0, -30, 0],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.div
+              className="absolute bottom-20 right-10 w-96 h-96 bg-accent-mint/30 rounded-full blur-3xl"
+              animate={disableHeavyEffects ? {} : {
+                x: [0, -30, 0],
+                y: [0, 50, 0],
+              }}
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </>
+        )}
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
           <div className="text-center">

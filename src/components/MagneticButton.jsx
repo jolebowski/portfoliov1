@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import { isMobile } from '../utils/mobileOptimizations'
 
 const MagneticButton = ({ 
   children, 
@@ -10,8 +11,12 @@ const MagneticButton = ({
 }) => {
   const ref = useRef(null)
   const [position, setPosition] = useState({ x: 0, y: 0 })
+  const mobile = isMobile()
 
   const handleMouse = (e) => {
+    // Disable magnetic effect on mobile for better performance
+    if (mobile) return
+    
     const { clientX, clientY } = e
     const { height, width, left, top } = ref.current.getBoundingClientRect()
     const middleX = clientX - (left + width / 2)
@@ -38,6 +43,25 @@ const MagneticButton = ({
     lg: 'px-8 py-4 text-lg',
   }
 
+  // Use regular button on mobile for better performance
+  if (mobile) {
+    return (
+      <button
+        ref={ref}
+        className={`
+          relative overflow-hidden rounded-xl font-medium
+          transition-colors duration-200
+          ${variants[variant]}
+          ${sizes[size]}
+          ${className}
+        `}
+        {...props}
+      >
+        <span className="relative z-10">{children}</span>
+      </button>
+    )
+  }
+  
   return (
     <motion.button
       ref={ref}
