@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import LanguageSwitcher from './LanguageSwitcher'
+// import LanguageSwitcher from './LanguageSwitcher' // Language switcher commented out - not needed now
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,10 +38,11 @@ function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
+      style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 dark:bg-dark-900/90 backdrop-blur-lg shadow-xl' 
-          : 'bg-white/70 dark:bg-dark-900/70 backdrop-blur-sm'
+          ? 'backdrop-blur-lg shadow-xl' 
+          : 'backdrop-blur-sm'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4">
@@ -54,7 +55,7 @@ function Navbar() {
             >
               JM
             </motion.span>
-            <span className="ml-3 font-medium text-dark-800 dark:text-white hidden sm:block">
+            <span className="ml-3 font-medium text-dark-800 hidden sm:block">
               Jordan Moreira
             </span>
           </Link>
@@ -62,7 +63,7 @@ function Navbar() {
           <div className="md:hidden">
             <motion.button
               onClick={toggleMenu}
-              className="text-dark-600 dark:text-dark-300 hover:text-primary-600 focus:outline-none p-2"
+              className="text-dark-600 hover:text-primary-600 focus:outline-none p-2"
               aria-label="Toggle menu"
               whileTap={{ scale: 0.95 }}
             >
@@ -86,22 +87,22 @@ function Navbar() {
                   to={item.path}
                   className={`relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                     isActive(item.path)
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white'
+                      ? 'text-primary-600'
+                      : 'text-dark-600 hover:text-dark-900'
                   }`}
                 >
                   {item.label}
                   {isActive(item.path) && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className="absolute inset-0 bg-primary-100 dark:bg-primary-900/30 rounded-xl -z-10"
+                      className="absolute inset-0 bg-primary-100 rounded-xl -z-10"
                       transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
                     />
                   )}
                 </Link>
               </motion.div>
             ))}
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */} {/* Language switcher commented out - not needed now */}
           </div>
         </div>
 
@@ -113,9 +114,10 @@ function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden rounded-b-2xl shadow-lg"
+              style={{ backgroundColor: '#ffffff' }}
             >
-              <div className="px-2 py-3 space-y-1">
+              <div className="px-2 py-3 space-y-1" style={{ backgroundColor: '#ffffff' }}>
                 {menuItems.map((item, index) => (
                   <motion.div
                     key={item.path}
@@ -128,8 +130,8 @@ function Navbar() {
                       to={item.path}
                       className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                         isActive(item.path)
-                          ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
-                          : 'text-dark-600 dark:text-dark-300 hover:bg-gray-100 dark:hover:bg-dark-800'
+                          ? 'bg-primary-100 text-primary-600'
+                          : 'text-dark-700 hover:bg-gray-100'
                       }`}
                       onClick={() => setIsOpen(false)}
                     >
