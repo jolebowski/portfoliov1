@@ -138,7 +138,7 @@ function Services() {
       
       {/* Hero Section with Gradient Background */}
       <motion.section 
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden py-24"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -168,7 +168,7 @@ function Services() {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4">
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
