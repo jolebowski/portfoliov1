@@ -72,6 +72,15 @@ function Projects() {
       //githubUrl: "https://github.com/username/neyda"
     },
     {
+      title: "SuiviFit",
+      description: "Plateforme complète de gestion pour coachs fitness indépendants",
+      image: "/assets/images/suivifit.png",
+      technologies: ["React", "Node.js", "PostgreSQL"],
+      demoUrl: "https://www.suivifit.com/",
+      details: "Plateforme tout-en-un permettant aux coachs de gérer jusqu'à 50 clients facilement : programmes personnalisés, suivi de progression, messagerie intégrée et tableau de bord analytique.",
+      //githubUrl: "https://github.com/username/suivifit"
+    },
+    {
       title: "ScrollBlocker",
       description: "Extension Chrome pour gérer votre temps en ligne et encourager des pauses régulières",
       image: "/assets/images/scrollblocker.png",

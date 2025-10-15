@@ -63,7 +63,7 @@ function Services() {
   const services = [
     {
       title: 'Offre Starter',
-      price: '500 €',
+      price: '750 €',
       description: 'Idéal pour les petites entreprises souhaitant une présence en ligne.',
       features: [
         'Site vitrine de 3 pages',
@@ -78,7 +78,7 @@ function Services() {
     },
     {
       title: 'Offre Pro',
-      price: '1000 €',
+      price: '1500 €',
       description: 'Pour les entreprises qui ont besoin d\'un site plus complet.',
       features: [
         'Site vitrine complet (jusqu\'à 6 pages)',
@@ -94,14 +94,15 @@ function Services() {
     },
     {
       title: 'Abonnement',
-      price: '50 €/mois',
+      price: '200 €/mois',
       description: 'Pour un suivi régulier et des mises à jour constantes.',
       features: [
         'Maintenance complète',
         'Mises à jour régulières',
-        '1h de modifications par mois',
+        '2h de modifications par mois',
         'Sauvegardes automatiques',
-        'Support prioritaire'
+        'Support prioritaire',
+        'Monitoring avancé'
       ],
       icon: '🔧',
       popular: false,
@@ -110,7 +111,7 @@ function Services() {
     },
     {
       title: 'Développement Mobile',
-      price: '1500 €',
+      price: '3000 €',
       description: 'Créez une application mobile sur mesure pour votre entreprise.',
       features: [
         'Application mobile personnalisée',
