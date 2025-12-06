@@ -1,20 +1,23 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
 import Button from '../design-system/Button';
-
-const links = [
-  { name: 'Accueil', path: '/' },
-  { name: 'Projets', path: '/projects' },
-  { name: 'Compétences', path: '/skills' },
-  { name: 'À propos', path: '/about' },
-  { name: 'Contact', path: '/contact' },
-];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const links = [
+    { name: t('nav.home', 'Accueil'), path: '/' },
+    { name: t('nav.projects', 'Projets'), path: '/projects' },
+    { name: t('nav.skills', 'Compétences'), path: '/skills' },
+    { name: t('nav.services', 'Services'), path: '/services' },
+    { name: t('nav.about', 'À propos'), path: '/about' },
+    { name: t('nav.contact', 'Contact'), path: '/contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +28,11 @@ const Header = () => {
   }, []);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'fr' : 'en';
+    i18n.changeLanguage(newLang);
+  };
 
   return (
     <header
@@ -49,6 +57,14 @@ const Header = () => {
               {link.name}
             </NavLink>
           ))}
+
+          <button
+            onClick={toggleLanguage}
+            className="text-sm font-bold text-muted-mist hover:text-white transition-colors border border-white/10 px-3 py-1 rounded-full hover:bg-white/5"
+          >
+            {i18n.language?.toUpperCase() || 'FR'}
+          </button>
+
           <Button variant="primary" className="ml-4" onClick={() => window.location.href = '/contact'}>
             Me Contacter
           </Button>
@@ -89,6 +105,16 @@ const Header = () => {
                 {link.name}
               </NavLink>
             ))}
+
+            <button
+              onClick={() => {
+                toggleLanguage();
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-xl font-bold text-muted-mist hover:text-white mt-4 border border-white/10 px-6 py-2 rounded-full"
+            >
+              {i18n.language === 'en' ? 'Switch to French' : 'Passer en Anglais'}
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

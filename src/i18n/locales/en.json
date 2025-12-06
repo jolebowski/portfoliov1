@@ -1,9 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
     "projects": "Projects",
+    "skills": "Skills",
     "services": "Services",
+    "about": "About",
     "contact": "Contact"
   },
   "home": {
@@ -55,9 +56,62 @@
   "services": {
     "title": "My Services",
     "subtitle": "Custom digital solutions to propel your business to success",
+    "subtitle": "Custom digital solutions to propel your business to success",
     "cta": {
       "discover": "Discover our offers",
-      "quote": "Request a quote"
+      "quote": "Request a quote",
+      "start": "Start Now",
+      "contact": "Contact me today and let's bring your ideas to life together"
+    },
+    "offerings": {
+      "title": "Our Packages",
+      "subtitle": "Choose the package that fits your needs and budget",
+      "starter": {
+        "title": "Starter Pack",
+        "desc": "Ideal for small businesses wanting an online presence."
+      },
+      "pro": {
+        "title": "Pro Pack",
+        "desc": "For businesses needing a more complete website."
+      },
+      "subscription": {
+        "title": "Subscription",
+        "desc": "For regular monitoring and constant updates."
+      },
+      "mobile": {
+        "title": "Mobile App",
+        "desc": "Create a custom native mobile application."
+      },
+      "features": {
+        "starter": [
+          "Showcase Site (3 pages)",
+          "Custom Design",
+          "7-day Delivery",
+          "Tech Support"
+        ],
+        "pro": [
+          "Full Site (6 pages)",
+          "Basic SEO",
+          "2h Training",
+          "Free Hosting",
+          "Analytics"
+        ],
+        "sub": [
+          "Maintenance",
+          "Updates",
+          "2h edits/month",
+          "Backups",
+          "Priority Support",
+          "Monitoring"
+        ],
+        "mobile": [
+          "Custom App",
+          "iOS & Android",
+          "API & Features",
+          "UI/UX Design",
+          "Store Deployment"
+        ]
+      }
     },
     "modal": {
       "title": "Request a quote",

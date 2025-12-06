@@ -1,9 +1,10 @@
 {
   "nav": {
     "home": "Accueil",
-    "about": "À propos",
     "projects": "Projets",
+    "skills": "Compétences",
     "services": "Services",
+    "about": "À propos",
     "contact": "Contact"
   },
   "home": {
@@ -55,9 +56,62 @@
   "services": {
     "title": "Mes Services",
     "subtitle": "Des solutions digitales sur mesure pour propulser votre entreprise vers le succès",
+    "subtitle": "Des solutions digitales sur mesure pour propulser votre entreprise vers le succès",
     "cta": {
       "discover": "Découvrir nos offres",
-      "quote": "Demander un devis"
+      "quote": "Demander un devis",
+      "start": "Commencer maintenant",
+      "contact": "Contactez-moi dès aujourd'hui et donnons vie à vos idées ensemble"
+    },
+    "offerings": {
+      "title": "Nos Formules",
+      "subtitle": "Choisissez la formule adaptée à vos besoins et votre budget",
+      "starter": {
+        "title": "Offre Starter",
+        "desc": "Idéal pour les petites entreprises souhaitant une présence en ligne."
+      },
+      "pro": {
+        "title": "Offre Pro",
+        "desc": "Pour les entreprises qui ont besoin d'un site plus complet."
+      },
+      "subscription": {
+        "title": "Abonnement",
+        "desc": "Pour un suivi régulier et des mises à jour constantes."
+      },
+      "mobile": {
+        "title": "Application Mobile",
+        "desc": "Créez une application mobile native sur mesure."
+      },
+      "features": {
+        "starter": [
+          "Site vitrine (3 pages)",
+          "Design personnalisé",
+          "Livraison 7 jours",
+          "Support technique"
+        ],
+        "pro": [
+          "Site complet (6 pages)",
+          "SEO basique",
+          "Formation 2h",
+          "Hébergement offert",
+          "Analytics"
+        ],
+        "sub": [
+          "Maintenance",
+          "Mises à jour",
+          "2h modifs/mois",
+          "Sauvegardes",
+          "Support prioritaire",
+          "Monitoring"
+        ],
+        "mobile": [
+          "App Personnalisée",
+          "iOS & Android",
+          "API & Features",
+          "Design UI/UX",
+          "Déploiement Stores"
+        ]
+      }
     },
     "modal": {
       "title": "Demander un devis",
