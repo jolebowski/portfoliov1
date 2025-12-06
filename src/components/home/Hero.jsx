@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // Added
 import { useNavigate } from 'react-router-dom';
 import Button from '../design-system/Button';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(); // Init
 
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20">
@@ -23,12 +25,12 @@ const Hero = () => {
           transition={{ delay: 0.1, duration: 0.8 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full border border-electric-violet/30 bg-electric-violet/10 backdrop-blur-md"
         >
-          <span className="text-sm font-medium text-electric-violet tracking-wide">DISPONIBLE POUR MISSIONS</span>
+          <span className="text-sm font-medium text-electric-violet tracking-wide">{t('home.hero.badge')}</span>
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-8">
-          Créateur d'Expériences <br />
-          <span className="text-gradient">Digitales.</span>
+          {t('home.hero.title')} <br />
+          <span className="text-gradient">{t('home.hero.titleHighlight')}</span>
         </h1>
 
         <motion.p
@@ -37,7 +39,7 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-lg md:text-xl text-muted-mist max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Bonjour, je suis Jordan. Développeur Full-Stack spécialisé dans la conception de produits numériques alliant excellence esthétique et précision technique.
+          {t('home.hero.description')}
         </motion.p>
 
         <motion.div
@@ -47,10 +49,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button variant="primary" onClick={() => navigate('/projects')} className="w-full sm:w-auto">
-            Voir mes projets
+            {t('home.hero.ctaProjects')}
           </Button>
           <Button variant="secondary" onClick={() => navigate('/contact')} className="w-full sm:w-auto">
-            Me contacter
+            {t('home.hero.ctaContact')}
           </Button>
         </motion.div>
       </motion.div>

@@ -1,40 +1,42 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // Added
 import { useNavigate } from 'react-router-dom';
 import Button from '../design-system/Button';
 import ProjectCard from '../design-system/ProjectCard';
 
-const projects = [
-  {
-    id: 1,
-    title: "SuiviFit",
-    description: "Plateforme complète de gestion pour coachs fitness indépendants avec suivi client et facturation.",
-    image: "/assets/images/suivifit.jpg",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    live: "https://www.suivifit.com/",
-    github: "#"
-  },
-  {
-    id: 2,
-    title: "Escooter",
-    description: "Une plateforme de vente en ligne complète avec panier, paiement et gestion de catalogue.",
-    image: "/assets/images/escooter.jpg",
-    tags: ["React", "Stripe", "Tailwind"],
-    live: "https://e-scooter-psi.vercel.app/",
-    github: "#"
-  },
-  {
-    id: 3,
-    title: "Maison Coiffure",
-    description: "Application pour la gestion d'un salon de coiffure avec système de réservations en ligne.",
-    image: "/assets/images/maisoncoiffure.jpg",
-    tags: ["React", "Vite", "Framer Motion"],
-    live: "https://maison-coiffure.vercel.app/",
-    github: "#"
-  }
-];
-
 const FeaturedProjects = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      id: 1,
+      title: "SuiviFit",
+      description: t('projects.items.suivifit.desc'),
+      image: "/assets/images/suivifit.jpg",
+      tags: ["React", "Node.js", "PostgreSQL"],
+      live: "https://www.suivifit.com/",
+      github: "#"
+    },
+    {
+      id: 2,
+      title: "Escooter",
+      description: t('projects.items.escooter.desc'),
+      image: "/assets/images/escooter.jpg",
+      tags: ["React", "Stripe", "Tailwind"],
+      live: "https://e-scooter-psi.vercel.app/",
+      github: "#"
+    },
+    {
+      id: 3,
+      title: "Maison Coiffure",
+      description: t('projects.items.maisoncoiffure.desc'),
+      image: "/assets/images/maisoncoiffure.jpg",
+      tags: ["React", "Vite", "Framer Motion"],
+      live: "https://maison-coiffure.vercel.app/",
+      github: "#"
+    }
+  ];
 
   return (
     <section className="py-24 relative overflow-hidden">
@@ -50,10 +52,10 @@ const FeaturedProjects = () => {
           >
             <div className="flex items-center space-x-2 mb-4">
               <span className="w-12 h-[1px] bg-electric-violet" />
-              <span className="text-electric-violet font-medium tracking-wider uppercase">Sélection</span>
+              <span className="text-electric-violet font-medium tracking-wider uppercase">{t('home.featured.badge')}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-starlight">
-              Projets <span className="text-gradient">Phare</span>
+              {t('home.featured.title')} <span className="text-gradient">{t('home.featured.titleHighlight')}</span>
             </h2>
           </motion.div>
 
@@ -64,7 +66,7 @@ const FeaturedProjects = () => {
             className="mt-6 md:mt-0"
           >
             <Button variant="ghost" onClick={() => navigate('/projects')}>
-              Voir tous les projets &rarr;
+              {t('home.featured.viewAll')} &rarr;
             </Button>
           </motion.div>
         </div>

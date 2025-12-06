@@ -1,15 +1,18 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // Added
 import SEO from '../components/SEO';
 import Button from '../components/design-system/Button';
 import ProjectCard from '../components/design-system/ProjectCard';
 
 function Projects() {
+  const { t } = useTranslation();
+
   const projects = [
     {
       id: 1,
       title: "Escooter",
-      description: "Une plateforme de vente en ligne complète avec panier et paiement",
-      image: "/assets/images/escooter.jpg", // Placeholder or keep original if valid
+      description: t('projects.items.escooter.desc'),
+      image: "/assets/images/escooter.jpg",
       tags: ["React"],
       live: "https://e-scooter-psi.vercel.app/",
       github: "#"
@@ -17,7 +20,7 @@ function Projects() {
     {
       id: 2,
       title: "Quit Betting",
-      description: "Application mobile pour aider les utilisateurs à surmonter leurs habitudes de pari.",
+      description: t('projects.items.quitbetting.desc'),
       image: "/assets/images/quitbettingapp.jpg",
       tags: ["React Native"],
       live: "#",
@@ -26,7 +29,7 @@ function Projects() {
     {
       id: 3,
       title: "Maison Coiffure",
-      description: "Application pour la gestion d'un salon de coiffure, réservations en ligne.",
+      description: t('projects.items.maisoncoiffure.desc'),
       image: "/assets/images/maisoncoiffure.jpg",
       tags: ["React"],
       live: "https://maison-coiffure.vercel.app/",
@@ -35,7 +38,7 @@ function Projects() {
     {
       id: 4,
       title: "Studio Photo",
-      description: "Portfolio d'un studio photo professionnel, mettant en avant des réalisations variées.",
+      description: t('projects.items.studiophoto.desc'),
       image: "/assets/images/studiophoto.jpg",
       tags: ["React"],
       live: "https://studio-photo-snowy.vercel.app/",
@@ -44,7 +47,7 @@ function Projects() {
     {
       id: 5,
       title: "Simulateur de Devis",
-      description: "Un simulateur interactif pour générer des devis personnalisés.",
+      description: t('projects.items.simulator.desc'),
       image: "/assets/images/simulator_devis.jpg",
       tags: ["React"],
       live: "https://simulatordevis.vercel.app/",
@@ -53,7 +56,7 @@ function Projects() {
     {
       id: 6,
       title: "SuiviFit",
-      description: "Plateforme complète de gestion pour coachs fitness indépendants.",
+      description: t('projects.items.suivifit.desc'),
       image: "/assets/images/suivifit.jpg",
       tags: ["React", "Node.js", "PostgreSQL"],
       live: "https://www.suivifit.com/",
@@ -81,10 +84,10 @@ function Projects() {
             className="text-center mb-20"
           >
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-starlight">
-              Mes <span className="text-gradient">Projets</span>
+              {t('projects.title')} <span className="text-gradient">{t('projects.titleHighlight')}</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-mist max-w-2xl mx-auto">
-              Une sélection de mes travaux récents, du développement web aux applications mobiles complexes.
+              {t('projects.description')}
             </p>
           </motion.div>
 
@@ -104,14 +107,14 @@ function Projects() {
             <div className="absolute inset-0 bg-gradient-to-r from-electric-violet/10 to-transparent pointer-events-none" />
 
             <h2 className="text-3xl font-display font-bold text-starlight mb-4 relative z-10">
-              Vous avez une idée en tête ?
+              {t('projects.cta.title')}
             </h2>
             <p className="text-muted-mist mb-8 relative z-10">
-              Transformons votre vision en réalité. Discutons de votre prochain projet.
+              {t('projects.cta.description')}
             </p>
             <div className="relative z-10">
               <Button variant="primary" onClick={() => window.location.href = '/contact'}>
-                Démarrer un projet
+                {t('projects.cta.button')}
               </Button>
             </div>
           </motion.div>

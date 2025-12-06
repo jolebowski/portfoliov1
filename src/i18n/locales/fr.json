@@ -8,60 +8,94 @@
     "contact": "Contact"
   },
   "home": {
-    "welcome": "Bienvenue sur mon portfolio",
-    "name": "Je suis Jordan",
-    "title": "Développeur Web & Mobile",
-    "description": "Développeur web freelance spécialisé dans la création de sites web professionnels et d'applications mobiles React Native",
-    "cta": {
-      "quote": "Obtenir un devis gratuit",
-      "projects": "Voir mes projets"
+    "hero": {
+      "badge": "DISPONIBLE POUR MISSIONS",
+      "title": "Créateur d'Expériences",
+      "titleHighlight": "Digitales.",
+      "description": "Bonjour, je suis Jordan. Développeur Full-Stack spécialisé dans la conception de produits numériques alliant excellence esthétique et précision technique.",
+      "ctaProjects": "Voir mes projets",
+      "ctaContact": "Me contacter"
     },
-    "services": {
-      "title": "Ce que je peux faire pour vous",
-      "subtitle": "Du site vitrine à l'application mobile complexe, je transforme vos idées en réalité digitale"
+    "featured": {
+      "badge": "Sélection",
+      "title": "Projets",
+      "titleHighlight": "Phare",
+      "viewAll": "Voir tous les projets"
     },
-    "features": {
-      "clean": {
-        "title": "Code Propre",
-        "desc": "Maintenable et évolutif"
-      },
-      "responsive": {
-        "title": "Responsive",
-        "desc": "Adapté à tous les écrans"
-      },
-      "performance": {
-        "title": "Performance",
-        "desc": "Optimisé pour la vitesse"
+    "skills": {
+      "title": "Ma",
+      "titleHighlight": "Stack Technique",
+      "description": "Je me spécialise dans la création d'applications robustes et évolutives en utilisant une stack moderne. Mon approche combine la flexibilité du JavaScript avec la puissance d'une infrastructure cloud typée.",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "devops": "DevOps"
       }
     }
   },
   "about": {
-    "title": "À propos de moi",
-    "subtitle": "Développeur web et mobile passionné",
-    "description": "basé au Mans, je transforme vos idées en solutions digitales innovantes et performantes.",
-    "experience": "Fort de plus de 5 ans d'expérience, je maîtrise les dernières technologies pour créer des applications web et mobiles qui font la différence.",
+    "badge": "À Propos",
+    "title": "Au-delà du",
+    "titleHighlight": "Code.",
+    "description": "Je suis Jordan, un développeur qui fait le lien entre l'ingénierie et le design. Je suis convaincu que les meilleurs produits numériques naissent d'une compréhension approfondie de la faisabilité technique et de l'expérience utilisateur.",
+    "cta": "Me Contacter",
+    "experience": {
+      "title": "Expérience",
+      "items": {
+        "pmu": {
+          "title": "Développeur React / React Native",
+          "desc": "Développement d'applications web et mobiles complexes pour le leader des paris hippiques."
+        },
+        "fdj": {
+          "title": "Développeur React Native",
+          "desc": "Maintenance et évolution de l'application Parions Sport Point de Vente."
+        },
+        "reezocar": {
+          "title": "Développeur Full Stack",
+          "desc": "Développement de nouvelles fonctionnalités sur la plateforme e-commerce de véhicules d'occasion."
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Mes",
+    "titleHighlight": "Projets",
+    "description": "Une sélection de mes travaux récents, du développement web aux applications mobiles complexes.",
     "cta": {
-      "work": "Travaillons ensemble",
-      "skills": "Voir mes compétences"
+      "title": "Vous avez une idée en tête ?",
+      "description": "Transformons votre vision en réalité. Discutons de votre prochain projet.",
+      "button": "Démarrer un projet"
     },
-    "skills": {
-      "title": "Compétences & Expertise",
-      "subtitle": "Technologies modernes et best practices pour des projets performants"
-    },
-    "timeline": {
-      "title": "Mon Parcours",
-      "subtitle": "Une évolution constante vers l'excellence technique"
+    "items": {
+      "escooter": {
+        "desc": "Une plateforme de vente en ligne complète avec panier et paiement"
+      },
+      "quitbetting": {
+        "desc": "Application mobile pour aider les utilisateurs à surmonter leurs habitudes de pari."
+      },
+      "maisoncoiffure": {
+        "desc": "Application pour la gestion d'un salon de coiffure, réservations en ligne."
+      },
+      "studiophoto": {
+        "desc": "Portfolio d'un studio photo professionnel, mettant en avant des réalisations variées."
+      },
+      "simulator": {
+        "desc": "Un simulateur interactif pour générer des devis personnalisés."
+      },
+      "suivifit": {
+        "desc": "Plateforme complète de gestion pour coachs fitness indépendants."
+      }
     }
   },
   "services": {
     "title": "Mes Services",
     "subtitle": "Des solutions digitales sur mesure pour propulser votre entreprise vers le succès",
-    "subtitle": "Des solutions digitales sur mesure pour propulser votre entreprise vers le succès",
     "cta": {
       "discover": "Découvrir nos offres",
       "quote": "Demander un devis",
       "start": "Commencer maintenant",
-      "contact": "Contactez-moi dès aujourd'hui et donnons vie à vos idées ensemble"
+      "contact": "Contactez-moi dès aujourd'hui et donnons vie à vos idées ensemble",
+      "title": "Prêt à démarrer ?"
     },
     "offerings": {
       "title": "Nos Formules",
@@ -128,17 +162,32 @@
     }
   },
   "contact": {
-    "title": "Contactez-moi",
-    "subtitle": "Transformons vos idées en projets concrets. Je suis à votre écoute pour discuter de vos besoins.",
+    "title": "Restons",
+    "titleHighlight": "Connectés.",
+    "description": "Vous avez un projet en tête ? Vous cherchez un partenaire pour vous aider à construire votre produit ? Je suis actuellement disponible pour de nouvelles opportunités.",
+    "items": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Localisation"
+    },
     "form": {
-      "name": "Nom complet",
+      "title": "Envoyer un message",
+      "name": "Nom",
       "email": "Email",
       "message": "Message",
-      "send": "Envoyer le message",
-      "sending": "Envoi en cours..."
+      "placeholderName": "Votre Nom",
+      "placeholderEmail": "nom@exemple.com",
+      "placeholderMessage": "Parlez-moi de votre projet...",
+      "send": "Envoyer",
+      "sending": "Envoi...",
+      "success": "Message envoyé avec succès !",
+      "error": "Échec de l'envoi. Veuillez réessayer."
     }
   },
   "footer": {
+    "description": "Créer des expériences numériques qui allient excellence esthétique et précision technique.",
+    "navigation": "Navigation",
+    "social": "Réseaux",
     "rights": "Tous droits réservés"
   }
 }

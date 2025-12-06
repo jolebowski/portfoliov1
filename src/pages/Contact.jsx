@@ -1,30 +1,32 @@
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next'; // Added
 import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import Button from '../components/design-system/Button';
 import SEO from '../components/SEO';
 import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from '../config/config';
 
 function Contact() {
+  const { t } = useTranslation(); // Init
   const contactInfo = [
     {
       icon: FaEnvelope,
-      title: 'Email',
+      title: t('contact.items.email'),
       value: 'jordan.moreira@epitech.eu',
       link: 'mailto:jordan.moreira@epitech.eu',
       delay: 0.1
     },
     {
       icon: FaPhone,
-      title: 'Téléphone',
+      title: t('contact.items.phone'),
       value: '+33 6 46 70 07 15',
       link: 'tel:+33646700715',
       delay: 0.2
     },
     {
       icon: FaMapMarkerAlt,
-      title: 'Localisation',
+      title: t('contact.items.location'),
       value: 'Le Mans, France',
       link: '#',
       delay: 0.3
@@ -75,11 +77,10 @@ function Contact() {
               className="text-center mb-16"
             >
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-starlight">
-                Restons <span className="text-gradient">Connectés.</span>
+                {t('contact.title')} <span className="text-gradient">{t('contact.titleHighlight')}</span>
               </h1>
               <p className="text-lg text-muted-mist max-w-xl mx-auto">
-                Vous avez un projet en tête ? Vous cherchez un partenaire pour vous aider à construire votre produit ?
-                Je suis actuellement disponible pour de nouvelles opportunités.
+                {t('contact.description')}
               </p>
             </motion.div>
 
@@ -111,40 +112,40 @@ function Contact() {
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-violet to-cyan-ray" />
 
-              <h2 className="text-2xl font-bold text-white mb-8">Envoyer un message</h2>
+              <h2 className="text-2xl font-bold text-white mb-8">{t('contact.form.title')}</h2>
 
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-muted-mist">Nom</label>
+                    <label className="text-sm font-medium text-muted-mist">{t('contact.form.name')}</label>
                     <input
                       type="text"
                       name="user_name"
                       required
                       className="w-full bg-deep-space border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-violet transition-colors"
-                      placeholder="Votre Nom"
+                      placeholder={t('contact.form.placeholderName')}
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-muted-mist">Email</label>
+                    <label className="text-sm font-medium text-muted-mist">{t('contact.form.email')}</label>
                     <input
                       type="email"
                       name="user_email"
                       required
                       className="w-full bg-deep-space border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-violet transition-colors"
-                      placeholder="nom@exemple.com"
+                      placeholder={t('contact.form.placeholderEmail')}
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-mist">Message</label>
+                  <label className="text-sm font-medium text-muted-mist">{t('contact.form.message')}</label>
                   <textarea
                     name="message"
                     rows="5"
                     required
                     className="w-full bg-deep-space border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-electric-violet transition-colors resize-none"
-                    placeholder="Parlez-moi de votre projet..."
+                    placeholder={t('contact.form.placeholderMessage')}
                   />
                 </div>
 
@@ -159,15 +160,15 @@ function Contact() {
                   </div>
 
                   <Button variant="primary" type="submit" disabled={status === 'sending'}>
-                    {status === 'sending' ? 'Envoi...' : 'Envoyer'}
+                    {status === 'sending' ? t('contact.form.sending') : t('contact.form.send')}
                   </Button>
                 </div>
 
                 {status === 'success' && (
-                  <p className="text-green-400 text-sm mt-4">Message envoyé avec succès !</p>
+                  <p className="text-green-400 text-sm mt-4">{t('contact.form.success')}</p>
                 )}
                 {status === 'error' && (
-                  <p className="text-red-400 text-sm mt-4">Échec de l'envoi. Veuillez réessayer.</p>
+                  <p className="text-red-400 text-sm mt-4">{t('contact.form.error')}</p>
                 )}
               </form>
             </motion.div>

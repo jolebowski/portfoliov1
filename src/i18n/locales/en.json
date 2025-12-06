@@ -8,60 +8,94 @@
     "contact": "Contact"
   },
   "home": {
-    "welcome": "Welcome to my portfolio",
-    "name": "I'm Jordan",
-    "title": "Web & Mobile Developer",
-    "description": "Freelance web developer specialized in creating professional websites and React Native mobile applications",
-    "cta": {
-      "quote": "Get a free quote",
-      "projects": "View my projects"
+    "hero": {
+      "badge": "AVAILABLE FOR HIRE",
+      "title": "Creator of Digital",
+      "titleHighlight": "Experiences.",
+      "description": "Hello, I'm Jordan. A Full-Stack Developer specializing in crafting digital products that blend aesthetic excellence with technical precision.",
+      "ctaProjects": "View my projects",
+      "ctaContact": "Contact me"
     },
-    "services": {
-      "title": "What I can do for you",
-      "subtitle": "From showcase websites to complex mobile applications, I transform your ideas into digital reality"
+    "featured": {
+      "badge": "Selection",
+      "title": "Featured",
+      "titleHighlight": "Projects",
+      "viewAll": "View all projects"
     },
-    "features": {
-      "clean": {
-        "title": "Clean Code",
-        "desc": "Maintainable and scalable"
-      },
-      "responsive": {
-        "title": "Responsive",
-        "desc": "Adapted to all screens"
-      },
-      "performance": {
-        "title": "Performance",
-        "desc": "Optimized for speed"
+    "skills": {
+      "title": "My",
+      "titleHighlight": "Tech Stack",
+      "description": "I specialize in building robust and scalable applications using a modern stack. My approach combines the flexibility of JavaScript with the power of typed cloud infrastructure.",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "devops": "DevOps"
       }
     }
   },
   "about": {
-    "title": "About me",
-    "subtitle": "Passionate web and mobile developer",
-    "description": "based in Le Mans, I transform your ideas into innovative and high-performance digital solutions.",
-    "experience": "With over 5 years of experience, I master the latest technologies to create web and mobile applications that make a difference.",
+    "badge": "About",
+    "title": "Beyond the",
+    "titleHighlight": "Code.",
+    "description": "I am Jordan, a developer bridging the gap between engineering and design. I believe the best digital products are born from a deep understanding of both technical feasibility and user experience.",
+    "cta": "Contact Me",
+    "experience": {
+      "title": "Experience",
+      "items": {
+        "pmu": {
+          "title": "React / React Native Developer",
+          "desc": "Development of complex web and mobile applications for the leader in horse racing betting."
+        },
+        "fdj": {
+          "title": "React Native Developer",
+          "desc": "Maintenance and evolution of the Parions Sport Point de Vente application."
+        },
+        "reezocar": {
+          "title": "Full Stack Developer",
+          "desc": "Development of new features for the used car e-commerce platform."
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "My",
+    "titleHighlight": "Projects",
+    "description": "A selection of my recent work, from web development to complex mobile applications.",
     "cta": {
-      "work": "Let's work together",
-      "skills": "View my skills"
+      "title": "Have an idea in mind?",
+      "description": "Let's turn your vision into reality. Let's discuss your next project.",
+      "button": "Start a project"
     },
-    "skills": {
-      "title": "Skills & Expertise",
-      "subtitle": "Modern technologies and best practices for high-performance projects"
-    },
-    "timeline": {
-      "title": "My Journey",
-      "subtitle": "A constant evolution towards technical excellence"
+    "items": {
+      "escooter": {
+        "desc": "A complete online sales platform with cart and payment."
+      },
+      "quitbetting": {
+        "desc": "Mobile app helping users overcome betting habits."
+      },
+      "maisoncoiffure": {
+        "desc": "Hair salon management app with online booking."
+      },
+      "studiophoto": {
+        "desc": "Professional photo studio portfolio showcasing various works."
+      },
+      "simulator": {
+        "desc": "Interactive simulator to generate custom quotes."
+      },
+      "suivifit": {
+        "desc": "Complete management platform for independent fitness coaches."
+      }
     }
   },
   "services": {
     "title": "My Services",
     "subtitle": "Custom digital solutions to propel your business to success",
-    "subtitle": "Custom digital solutions to propel your business to success",
     "cta": {
       "discover": "Discover our offers",
       "quote": "Request a quote",
       "start": "Start Now",
-      "contact": "Contact me today and let's bring your ideas to life together"
+      "contact": "Contact me today and let's bring your ideas to life together",
+      "title": "Ready to get started?"
     },
     "offerings": {
       "title": "Our Packages",
@@ -128,17 +162,32 @@
     }
   },
   "contact": {
-    "title": "Contact me",
-    "subtitle": "Let's transform your ideas into concrete projects. I'm here to discuss your needs.",
+    "title": "Let's",
+    "titleHighlight": "Connect.",
+    "description": "Have a project in mind? Looking for a partner to help build your product? I am currently available for new opportunities.",
+    "items": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
     "form": {
-      "name": "Full name",
+      "title": "Send a message",
+      "name": "Name",
       "email": "Email",
       "message": "Message",
-      "send": "Send message",
-      "sending": "Sending..."
+      "placeholderName": "Your Name",
+      "placeholderEmail": "name@example.com",
+      "placeholderMessage": "Tell me about your project...",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send. Please try again."
     }
   },
   "footer": {
+    "description": "Crafting digital experiences that blend aesthetic excellence with technical precision.",
+    "navigation": "Navigation",
+    "social": "Social",
     "rights": "All rights reserved"
   }
 }

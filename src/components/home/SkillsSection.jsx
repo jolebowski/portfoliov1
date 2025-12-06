@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // Added
 import Badge from '../design-system/Badge';
 import SkillsOrbit from './SkillsOrbit';
 
-const categories = [
-  { name: 'Frontend', skills: ['React', 'Vue', 'Next.js', 'Tailwind', 'Framer Motion'] },
-  { name: 'Backend', skills: ['Node.js', 'Python', 'PostgreSQL', 'GraphQL'] },
-  { name: 'DevOps', skills: ['Docker', 'AWS', 'CI/CD', 'Git', 'Linux'] },
-];
-
 const SkillsSection = () => {
+  const { t } = useTranslation();
+
+  const categories = [
+    { name: t('home.skills.categories.frontend'), skills: ['React', 'Vue', 'Next.js', 'Tailwind', 'Framer Motion'] },
+    { name: t('home.skills.categories.backend'), skills: ['Node.js', 'Python', 'PostgreSQL', 'GraphQL'] },
+    { name: t('home.skills.categories.devops'), skills: ['Docker', 'AWS', 'CI/CD', 'Git', 'Linux'] },
+  ];
+
   return (
     <section className="py-24 relative overflow-hidden bg-midnight/30">
       <div className="container mx-auto px-6">
@@ -22,11 +25,10 @@ const SkillsSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-starlight">
-              Ma <span className="text-gradient">Stack Technique</span>
+              {t('home.skills.title')} <span className="text-gradient">{t('home.skills.titleHighlight')}</span>
             </h2>
             <p className="text-lg text-muted-mist mb-12 leading-relaxed">
-              Je me spécialise dans la création d'applications robustes et évolutives en utilisant une stack moderne.
-              Mon approche combine la flexibilité du JavaScript avec la puissance d'une infrastructure cloud typée.
+              {t('home.skills.description')}
             </p>
 
             <div className="space-y-8">

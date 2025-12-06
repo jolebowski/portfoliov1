@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next'; // Added
 import SEO from '../components/SEO';
 import Button from '../components/design-system/Button';
 
 function About() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -13,9 +15,9 @@ function About() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   const experience = [
-    { year: '2023-2025', title: 'Développeur React / React Native', company: 'PMU', description: 'Développement d\'applications web et mobiles complexes pour le leader des paris hippiques.' },
-    { year: '2021-2022', title: 'Développeur React Native', company: 'Française des Jeux (FDJ)', description: 'Maintenance et évolution de l\'application Parions Sport Point de Vente.' },
-    { year: '2019-2021', title: 'Développeur Full Stack', company: 'Reezocar', description: 'Développement de nouvelles fonctionnalités sur la plateforme e-commerce de véhicules d\'occasion.' },
+    { year: '2023-2025', title: t('about.experience.items.pmu.title'), company: 'PMU', description: t('about.experience.items.pmu.desc') },
+    { year: '2021-2022', title: t('about.experience.items.fdj.title'), company: 'Française des Jeux (FDJ)', description: t('about.experience.items.fdj.desc') },
+    { year: '2019-2021', title: t('about.experience.items.reezocar.title'), company: 'Reezocar', description: t('about.experience.items.reezocar.desc') },
   ];
 
   return (
@@ -37,19 +39,18 @@ function About() {
             className="z-10"
           >
             <div className="inline-block mb-4 px-3 py-1 rounded-full border border-electric-violet/30 bg-electric-violet/10 backdrop-blur-md">
-              <span className="text-sm font-medium text-electric-violet tracking-wide uppercase">À Propos</span>
+              <span className="text-sm font-medium text-electric-violet tracking-wide uppercase">{t('about.badge')}</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 text-starlight leading-tight">
-              Au-delà du <br />
-              <span className="text-gradient">Code.</span>
+              {t('about.title')} <br />
+              <span className="text-gradient">{t('about.titleHighlight')}</span>
             </h1>
             <p className="text-lg text-muted-mist mb-8 leading-relaxed max-w-xl">
-              Je suis Jordan, un développeur qui fait le lien entre l'ingénierie et le design.
-              Je suis convaincu que les meilleurs produits numériques naissent d'une compréhension approfondie de la faisabilité technique et de l'expérience utilisateur.
+              {t('about.description')}
             </p>
             <div className="flex gap-4">
               <Button variant="primary" onClick={() => window.location.href = '/contact'}>
-                Me Contacter
+                {t('about.cta')}
               </Button>
             </div>
           </motion.div>
@@ -76,7 +77,7 @@ function About() {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-display font-bold mb-16 text-center text-starlight"
             >
-              Expérience
+              {t('about.experience.title')}
             </motion.h2>
 
             <div className="space-y-12 relative">

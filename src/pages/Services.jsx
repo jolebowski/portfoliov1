@@ -230,7 +230,7 @@ function Services() {
         <section className="py-24 relative overflow-hidden">
           <div className="container mx-auto px-6 text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-starlight mb-8">
-              Prêt à démarrer ?
+              {t('services.cta.title')}
             </h2>
             <p className="text-xl text-muted-mist mb-12 max-w-2xl mx-auto">
               {t('services.cta.contact')}
@@ -238,7 +238,7 @@ function Services() {
 
             <MagneticButton
               onClick={openModal}
-              className="bg-white text-gray-900 font-display font-bold px-12 py-5 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] text-xl transform hover:scale-105"
+              className="bg-electric-violet text-white font-display font-bold px-12 py-5 rounded-full hover:bg-electric-violet/80 transition-all duration-300 shadow-[0_0_30px_rgba(124,58,237,0.3)] hover:shadow-[0_0_40px_rgba(124,58,237,0.5)] text-xl transform hover:scale-105"
             >
               {t('services.cta.start')}
             </MagneticButton>
